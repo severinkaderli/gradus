@@ -6,3 +6,4 @@ Web based grade manager
 * Managing of grade collections
 * Managing of subjects
 * Managing of grades
+* Correct calculation of averages and the like
