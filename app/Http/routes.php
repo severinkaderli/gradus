@@ -19,7 +19,7 @@ Route::post('register', 'Auth\AuthController@postRegister');
 //Authentication
 Route::get('login', 'PageController@home');
 Route::post('login', 'Auth\AuthController@postLogin');
-Route::get('logout', 'Auth\AuthController@getLegout');
+Route::get('logout', 'Auth\AuthController@getLogout');
 
 
 //Static pages
