@@ -12,4 +12,18 @@
 */
 
 
-Route::get('/', 'GroupController@index');
+//Registration
+Route::get('register', 'PageController@register');
+Route::post('register', 'Auth\AuthController@postRegister');
+
+//Authentication
+Route::get('login', 'PageController@home');
+Route::post('login', 'Auth\AuthController@postLogin');
+Route::get('logout', 'Auth\AuthController@getLegout');
+
+
+//Static pages
+Route::get('/', 'PageController@home');
+
+//Groups
+Route::resource('groups', "GroupController");

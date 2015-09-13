@@ -12,7 +12,7 @@ class GroupController extends Controller
 
 
     /**
-     * @return mixed
+     * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function index()
     {
