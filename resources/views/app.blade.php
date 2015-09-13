@@ -14,25 +14,59 @@
     <!-- Fonts -->
 
     <!-- CSS Files -->
-
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/framework.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/style.css')}}">
     @yield('extraCSS')
     <!-- JS Files -->
     @yield('extraJS')
 </head>
 <body>
-    <!-- Header START -->
-    <header id="header" class="mdl-layout__header mdl-color--white mdl-color--grey-100 mdl-color-text--grey-600">
+    <div id="wrapper" class="grid">
+        <div id="apps" class="cell cell--12">
+            <div id="apps--content" class="grid">
+                <nav id="app--links">
+                    <ul>
+                        <li>gradus</li>
+                        <li>memento</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Header START -->
+        <header id="header" class="cell cell--12">
+            <div id="header--content" class="grid">
+                <div id="header--logo" class="cell cell--3">
+                    &#x2713;
+                </div>
+                <nav id="header--navigation" class="cell cell--9">
+                    <ul>
+                        <li><a href="">Login</a></li>
+                        <li><a href="">Register</a></li>
+                        <li><a href="">Logout</a></li>
+                    </ul>
+                </nav>
+            </div>
 
-    </header>
-    <!-- Header END -->
+        </header>
+        <!-- Header END -->
 
-    <!-- Content START -->
-    <main>
-            @yield('content')
-    </main>
-    <!-- Content END -->
+        <!-- Content START -->
+        <main id="contentWrapper" class="cell cell--12">
+            <div id="content" class="grid">
+                @yield('content')
+            </div>
+        </main>
+        <!-- Content END -->
+        <!-- Footer START -->
+        <footer id="footer" class="cell cell--12">
+            <div id="footer--content" class="grid">
+                severin kaderli
+            </div>
+        </footer>
+        <!-- Footer END -->
+    </div>
 
-<!-- Body JS -->
-@yield('bodyJS')
+    <!-- Body JS -->
+    @yield('bodyJS')
 </body>
 </html>

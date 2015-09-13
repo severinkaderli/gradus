@@ -6,10 +6,11 @@
 
 @section('content')
     @include('errors._list')
+    <div class="cell cell--6 cell--center">
+        <h2>Login</h2>
+        {!! Form::open(['url' => 'login'])!!}
 
-    {!! Form::open(['url' => 'login'])!!}
-
-        <!-- email Inputfield -->
+                <!-- email Inputfield -->
         <div>
             {!! Form::email('email', null, ['id' => 'email']) !!}
             {!! Form::label('email', 'E-Mail') !!}
@@ -31,5 +32,7 @@
             {!! Form::submit('Login', ['id' => 'login', 'name' => 'login']) !!}
         </div>
 
-    {!! Form::close() !!}
+        {!! Form::close() !!}
+    </div>
+
 @stop

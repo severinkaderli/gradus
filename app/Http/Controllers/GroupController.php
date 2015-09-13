@@ -16,7 +16,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        return User::all();
+        return view('groups.index');
     }
 
 }
