@@ -7,28 +7,26 @@
 @section('content')
     @include('errors._list')
     <div class="cell cell--6 cell--center">
-        <h2>Login</h2>
+        <h1>Login</h1>
         {!! Form::open(['url' => 'login'])!!}
 
-                <!-- email Inputfield -->
-        <div>
-            {!! Form::email('email', null, ['id' => 'email']) !!}
+
+        <div class="input--group">
             {!! Form::label('email', 'E-Mail') !!}
+            {!! Form::email('email', null, ['id' => 'email']) !!}
         </div>
 
-        <!-- password Inputfield -->
-        <div>
-            {!! Form::password('password', ['id' => 'password']) !!}
+        <div class="input--group">
             {!! Form::label('password', 'Passwort') !!}
+            {!! Form::password('password', ['id' => 'password']) !!}
         </div>
 
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
-            <input type="checkbox" name="remember" id="remember" class="mdl-checkbox__input" />
-            <span class="mdl-checkbox__label">Remember Password</span>
-        </label>
+        <div class="input--group">
+            {!! Form::label('remember', 'Remember password') !!}
+            {!! Form::checkbox('remember', '', false, ['id' => 'remember']) !!}
+        </div>
 
-        <!-- login Submit Button -->
-        <div>
+        <div class="input--group">
             {!! Form::submit('Login', ['id' => 'login', 'name' => 'login']) !!}
         </div>
 

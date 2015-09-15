@@ -1,19 +1,19 @@
 body {
-    font-family: Verdana;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5;
 }
 
-#wrapper {
-    width: 100%;
+.fullWidth {
+    width: 1020px;
+    margin: 0 auto;
+    max-width: 100%;
 }
 
 /*App-List*/
 #apps {
-    background-color: #e7f1f8;
 }
 
 #apps--content {
-    width: 1020px;
-    margin: 0 auto;
 }
 
 /*Header*/
@@ -23,12 +23,10 @@ body {
 }
 
 #header--content {
-    width: 1020px;
-    margin: 0 auto;
 }
 
 #header--logo {
-    
+
 }
 
 #header--logo h1 {
@@ -67,21 +65,22 @@ body {
 
 /*Content*/
 #contentWrapper {
-    background-color: #e7f1f8;
 }
 
 #content {
-    width: 1020px;
-    margin: 0 auto;
 }
 
 /*Footer*/
 #footer {
     background-color: #3C5499;
     color: #FFF;
+    position: absolute;
+    bottom: 0;
 }
 
 #footer--content {
-    width: 1020px;
-    margin: 0 auto;
+}
+
+#footer__copyright {
+    border-top: 1px dotted #FFF;
 }
