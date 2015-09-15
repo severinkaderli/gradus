@@ -18,9 +18,41 @@ body {
 
 /*App-List*/
 #apps {
+    background-color: #000;
+    padding: 5px 10px;
+    font-size: 0.9em;
 }
 
-#apps--content {
+#apps--content ul {
+    list-style: none;
+    padding: 0;
+}
+
+#apps--content ul li {
+    display: inline-block;
+}
+
+#apps--content ul li a {
+    padding: 5px 10px;
+    color: white;
+    dispaly: inline-block;
+    text-decoration: none;
+}
+
+#apps--content ul li:first-child a {
+    border-top-left-radius: 15px;
+}
+
+#apps--content ul li:last-child a {
+    border-top-right-radius: 15px;
+}
+
+#apps--content ul li.active a {
+    background-color: #3C5499;
+}
+
+#apps--content ul li a:hover {
+    text-decoration: underline;
 }
 
 /*Header*/
@@ -72,6 +104,7 @@ body {
 
 /*Content*/
 #contentWrapper {
+    /*Used for sticky footer*/
     flex: 1 0 auto;
 }
 
@@ -88,5 +121,6 @@ body {
 }
 
 #footer__copyright {
-    border-top: 1px dotted #FFF;
+    background-color: #273A71;
+    color: #FFF;
 }

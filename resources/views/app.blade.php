@@ -22,16 +22,18 @@
 </head>
 <body>
     <div id="wrapper" class="grid">
+        <!-- Appbar START -->
         <div id="apps" class="cell cell--12">
             <div id="apps--content" class="grid fullWidth">
                 <nav id="app--links">
                     <ul>
-                        <li>gradus</li>
-                        <li>memento</li>
+                        <li class="active"><a href="">gradus</a></li>
+                        <li class="inactive"><a href="http://memento.severinkaderli.ch">memento</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
+        <!-- Appbar END -->
         <!-- Header START -->
         <header id="header" class="cell cell--12">
             <div id="header--content" class="grid fullWidth">
@@ -72,11 +74,15 @@
                         <li>severinkaderli.ch</li>
                     </ul>
                 </div>
-                <div id="footer__copyright" class="cell cell--12">
+            </div>
+        </footer>
+        <div id="footer__copyright" class="cell cell--12">
+            <div id="footer_copyright__content" class="grid fullWidth">
+                <div class="cell cell--12">
                     &copy; 2015 - Severin Kaderli
                 </div>
             </div>
-        </footer>
+        </div>
         <!-- Footer END -->
     </div>
 
