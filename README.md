@@ -1,5 +1,5 @@
 # gradus
-Web based grade manager
+Web based grade manager for managing grades.
 
 ##Features
 * Registering and login
