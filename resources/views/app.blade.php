@@ -14,7 +14,7 @@
     <!-- Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/framework.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/simplex.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/style.css')}}">
     @yield('extraCSS')
     <!-- JS Files -->
