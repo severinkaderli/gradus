@@ -37,6 +37,7 @@ class Subject extends Model
     /**
      * @return float
      */
+    //Optimize this code
     public function getAverage() {
         $grades = $this->grades;
         $gradeArray = [];

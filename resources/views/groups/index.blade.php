@@ -9,18 +9,18 @@
     @forelse($groups as $group)
         <div class="group cell cell--12">
             <header class="group__header">
-                <h2>{{$group->name}}</h2>
+                <h2>{{$group->name}} - {{$group->getAverage()}}</h2>
             </header>
             <div class="group__wrapper">
                 <div class="group__content">
                     @foreach($group->subjects as $subject)
                         <div class="subject">
                             <header class="subject__header">
-                                <h3>{{$subject->name}} - {{$subject->getAverage()}}</h3>
+                                <h3>{{$subject->name}}: &Oslash;{{$subject->getAverage()}}</h3>
                             </header>
                             <div class="subject__content">
                                 @foreach($subject->grades as $grade)
-                                    {{number_format($grade->grade, 1, '.', '\'')}},
+                                    {{number_format($grade->grade, 1, ".", "'")}},
                                 @endforeach
                             </div>
                             <footer class="subject__footer">
