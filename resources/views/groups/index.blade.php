@@ -6,10 +6,10 @@
 
 @section('content')
 
-    @forelse($groups as $group)
+    @foreach($groups as $group)
         <div class="group cell cell--12">
             <header class="group__header">
-                <h2>{{$group->name}} - {{$group->getAverage()}}</h2>
+                <h2>{{$group->name}}: &Oslash;{{$group->getAverage()}}</h2>
             </header>
             <div class="group__wrapper">
                 <div class="group__content">
@@ -46,7 +46,6 @@
                 </footer>
             </div>
         </div>
-    @empty
-        No groupos
-    @endforelse
+    @endforeach
+    <a class="btn" href="">Add group</a>
 @stop

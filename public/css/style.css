@@ -119,6 +119,18 @@ body {
     padding: 20px 10px;
 }
 
+#footer ul {
+    list-style: none;
+}
+
+#footer a, #footer a:visited, #footer a:hover {
+    color: #fff;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+}
+
 #footer__content h3 {
     margin-top: 0;
 }

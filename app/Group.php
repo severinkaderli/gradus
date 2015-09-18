@@ -28,7 +28,7 @@ class Group extends Model
     }
 
     /**
-     * @return float|int
+     * @return float
      */
     //TODO: Optimize this code
     public function getAverage()
@@ -36,14 +36,14 @@ class Group extends Model
         $subjects = $this->subjects;
         $gradeArray = [];
         $factorArray = [];
-        foreach($subjects as $subject) {
-            array_push($gradeArray, $subject->getAverage()*$subject->factor);
+        foreach ($subjects as $subject) {
+            array_push($gradeArray, $subject->getAverage() * $subject->factor);
             array_push($factorArray, $subject->factor);
         }
-        if(!empty($gradeArray) && !empty($factorArray)) {
-            return round(array_sum($gradeArray)/array_sum($factorArray), 1);
+        if (!empty($gradeArray) && !empty($factorArray)) {
+            return round(array_sum($gradeArray) / array_sum($factorArray), 1);
         } else {
-            return 0;
+            return 0.0;
         }
 
     }

@@ -75,9 +75,9 @@
                 <div class="cell cell--6">
                     <h3>Links</h3>
                     <ul>
-                        <li>Github</li>
-                        <li>simplex-css</li>
-                        <li>severinkaderli.ch</li>
+                        <li><a href="https://github.com/severinkaderli/gradus">GitHub</a></li>
+                        <li><a href="https://github.com/severinkaderli/simplex.css">simplex.css</a></li>
+                        <li><a href="http://severinkaderli.ch">severinkaderli.ch</a></li>
                     </ul>
                 </div>
             </div>
