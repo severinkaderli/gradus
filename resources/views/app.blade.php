@@ -12,7 +12,7 @@
     <meta name="keywords" content="gradus, mark, grades, marks, subject, subjects, tests, success, severin, kaderli">
     <meta name="author" content="Severin Kaderli">
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/simplex.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('css/style.css')}}">
@@ -61,7 +61,7 @@
         <!-- Content END -->
         <!-- Footer START -->
         <footer id="footer" class="cell cell--12">
-            <div id="footer--content" class="grid fullWidth">
+            <div id="footer__content" class="grid fullWidth">
                 <div class="cell cell--6">
                     <h3>About</h3>
                     <p>This is a site for managing your marks blablablub</p>

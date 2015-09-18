@@ -116,14 +116,16 @@ body {
 #footer {
     background-color: #3C5499;
     color: #FFF;
+    padding: 20px 10px;
 }
 
-#footer--content {
+#footer__content h3 {
+    margin-top: 0;
 }
-
 #footer__copyright {
     background-color: #273A71;
     color: #FFF;
+    padding: 10px;
 }
 
 /********/
@@ -137,7 +139,9 @@ body {
 
 .group__header {
     padding: 10px;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
+    background-color: #3C5499;
+    color: #FFF;
 }
 
 .group__header h2 {
@@ -149,26 +153,36 @@ body {
 
 .group__footer {
     padding: 10px;
+    font-size: 0.9em;
 }
 
 /*Subjects*/
-.subject {}
+.subject {
+    border-bottom: 1px dotted #000;
+    padding: 5px 0;
+}
 
 .subject__header {
-    background-color: #3C5499;
-    color: #FFF;
     padding: 5px 10px;
 }
 
 .subject__header h3 {
     font-size: 0.9em;
+    text-decoration: underline;
     margin: 0;
 }
 
 .subject__content {
-    padding: 10px;
+    padding: 2px 10px;
 }
 
-.subject__footer {
-    padding: 10px;
+.subject__footer__factor {
+    padding: 2px 10px;
+    color: #f00;
+    margin-bottom: 5px;
+}
+
+.subject__footer__add {
+    padding: 2px 10px;
+    font-size: 0.9em;
 }
