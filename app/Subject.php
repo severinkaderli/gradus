@@ -22,6 +22,29 @@ class Subject extends Model
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function grades() {
-        return $this->hasMany('App\Grades');
+        return $this->hasMany('App\Grade');
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeArchived($query)
+    {
+        return $query -> where('archived', 1);
+    }
+
+    /**
+     * @return float
+     */
+    public function getAverage() {
+        $grades = $this->grades;
+        $gradeArray = [];
+        $factorArray = [];
+        foreach($grades as $grade) {
+            array_push($gradeArray, $grade->grade*$grade->factor);
+            array_push($factorArray, $grade->factor);
+        }
+        return round(array_sum($gradeArray)/array_sum($factorArray), 1);
     }
 }

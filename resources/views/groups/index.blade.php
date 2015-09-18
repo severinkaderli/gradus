@@ -16,10 +16,12 @@
                     @foreach($group->subjects as $subject)
                         <div class="subject">
                             <header class="subject__header">
-                                <h3>{{$subject->name}}</h3>
+                                <h3>{{$subject->name}} - {{$subject->getAverage()}}</h3>
                             </header>
                             <div class="subject__content">
-                                1.1, 1.3, 5.5, 6
+                                @foreach($subject->grades as $grade)
+                                    {{number_format($grade->grade, 1, '.', '\'')}},
+                                @endforeach
                             </div>
                             <footer class="subject__footer">
                                 <div class="subject__footer__factor">

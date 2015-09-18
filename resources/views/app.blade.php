@@ -42,9 +42,15 @@
                 </div>
                 <nav id="header--navigation" class="cell cell--9 right">
                     <ul>
-                        <li><a href="">Login</a></li>
-                        <li><a href="">Register</a></li>
-                        <li><a href="">Logout</a></li>
+                        @if(!Auth::check())
+                            <li><a href="{{url('login')}}">Login</a></li>
+                            <li><a href="{{url('register')}}">Register</a></li>
+                        @else
+                            <li><a href="{{url('archive')}}">Archive</a></li>
+                            <li><a href="{{url('logout')}}">Logout</a></li>
+                        @endif
+
+
                     </ul>
                 </nav>
             </div>
