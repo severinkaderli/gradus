@@ -60,13 +60,13 @@ body {
 #header {
     background-color: #3C5499;
     color: #FFF;
+    padding: 20px;
 }
 
 #header--content {
 }
 
 #header--logo {
-
 }
 
 #header--logo h1 {
@@ -74,11 +74,9 @@ body {
 }
 
 #header--navigation {
-
 }
 
 #header--navigation ul {
-    padding: 0;
     list-style: none;
 }
 
@@ -107,6 +105,8 @@ body {
 #contentWrapper {
     /*Used for sticky footer*/
     flex: 1 0 auto;
+
+    padding: 20px;
 }
 
 #content {
@@ -124,4 +124,51 @@ body {
 #footer__copyright {
     background-color: #273A71;
     color: #FFF;
+}
+
+/********/
+/*Groups*/
+/********/
+.group {
+    border: 1px solid black;
+    background-color: #FFF;
+    margin: 10px 0;
+}
+
+.group__header {
+    padding: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.group__header h2 {
+    margin: 0;
+    font-size: 1em;
+}
+
+.group__content {}
+
+.group__footer {
+    padding: 10px;
+}
+
+/*Subjects*/
+.subject {}
+
+.subject__header {
+    background-color: #3C5499;
+    color: #FFF;
+    padding: 5px 10px;
+}
+
+.subject__header h3 {
+    font-size: 0.9em;
+    margin: 0;
+}
+
+.subject__content {
+    padding: 10px;
+}
+
+.subject__footer {
+    padding: 10px;
 }
