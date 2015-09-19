@@ -28,3 +28,9 @@ Route::get('/', 'PageController@home');
 //Groups
 Route::resource('groups', "GroupController");
 
+//Subjects
+Route::get('groups/{groups}/subjects/create', "SubjectController@create");
+Route::post('groups/{groups}/subjects', "SubjectController@store");
+Route::get('subjects/{subjects}/edit', "SubjectController@edit");
+Route::patch('subjects/{subjects}', "SubjectController@update");
+Route::delete('subjects/{subjects}', "SubjectController@destroy");

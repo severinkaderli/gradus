@@ -178,8 +178,8 @@ body {
 
 /*Subjects*/
 .subject {
-    border-bottom: 1px dotted #000;
-    padding: 5px 0;
+    border-bottom: 1px solid #000;
+    padding: 5px 0 10px;
 }
 
 .subject__header {
@@ -188,8 +188,11 @@ body {
 
 .subject__header h3 {
     font-size: 0.9em;
-    text-decoration: underline;
     margin: 0;
+}
+
+.subject__header h3 a:hover {
+    text-decoration: underline;
 }
 
 .subject__content {
