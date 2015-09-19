@@ -34,3 +34,10 @@ Route::post('groups/{groups}/subjects', "SubjectController@store");
 Route::get('subjects/{subjects}/edit', "SubjectController@edit");
 Route::patch('subjects/{subjects}', "SubjectController@update");
 Route::delete('subjects/{subjects}', "SubjectController@destroy");
+
+//Grades
+Route::get('subjects/{subjects}/grades/create', "GradeController@create");
+Route::post('subjects/{subjects}/grades', "GradeController@store");
+Route::get('grades/{grades}/edit', "GradeController@edit");
+Route::patch('grades/{grades}', "GradeController@update");
+Route::delete('grades/{grades}', "GradeController@destroy");

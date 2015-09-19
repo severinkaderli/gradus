@@ -21,7 +21,7 @@
                             </header>
                             <div class="subject__content">
                                 @foreach($subject->grades as $grade)
-                                    {{number_format($grade->grade, 1, ".", "'")}},
+                                    <a class='grade' href="{{url('grades/' . $grade->id . '/edit')}}">{{number_format($grade->grade, 1, ".", "'")}}</a>
                                 @endforeach
                             </div>
                             <footer class="subject__footer">
@@ -34,7 +34,7 @@
                                     @endif
                                 </div>
                                 <div class="subject__footer__add">
-                                    <a class="btn" href="">Add mark</a>
+                                    <a class="btn" href="{{url('subjects/' . $subject->id . '/grades/create')}}">Add grade</a>
                                 </div>
 
                             </footer>
