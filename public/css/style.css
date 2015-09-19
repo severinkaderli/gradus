@@ -177,9 +177,12 @@ body {
     transform: translateY(-50%);
     font-size: 1.1em;
     font-weight: bold;
+    cursor: pointer;
 }
 
-.group__content {}
+.group__average:hover {
+    text-decoration: underline;
+}
 
 .group__footer {
     padding: 10px;
