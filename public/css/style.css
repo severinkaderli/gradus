@@ -194,6 +194,8 @@ body {
 
 .subject__header {
     padding: 5px 10px;
+    border-bottom: 1px dotted #000;
+    position: relative;
 }
 
 .subject__header h3 {
@@ -203,6 +205,13 @@ body {
 
 .subject__header h3 a:hover {
     text-decoration: underline;
+}
+
+.subject__average {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
 }
 
 .subject__content {

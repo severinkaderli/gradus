@@ -43,7 +43,7 @@ class Group extends Model
             }
         }
         if (!empty($gradeArray) && !empty($factorArray)) {
-            return round(array_sum($gradeArray) / array_sum($factorArray), 1);
+            return number_format(round(array_sum($gradeArray) / array_sum($factorArray), 1), 1);
         } else {
             return 0.0;
         }

@@ -17,7 +17,8 @@
                     @foreach($group->subjects as $subject)
                         <div class="subject">
                             <header class="subject__header">
-                                <h3><a href="{{url('subjects/' . $subject->id . '/edit')}}">{{$subject->name}}: &Oslash;{{$subject->getAverage()}}</a></h3>
+                                <h3><a href="{{url('subjects/' . $subject->id . '/edit')}}">{{$subject->name}}</a></h3>
+                                <span class="subject__average">&Oslash;{{$subject->getAverage()}}</span>
                             </header>
                             <div class="subject__content">
                                 @foreach($subject->grades as $grade)
@@ -49,4 +50,8 @@
         </div>
     @endforeach
     <a class="btn" href="{{url('groups/create')}}">Add group</a>
+@stop
+
+@section('bodyJS')
+
 @stop
