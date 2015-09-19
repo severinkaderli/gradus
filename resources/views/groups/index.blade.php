@@ -9,8 +9,8 @@
     @foreach($groups as $group)
         <div class="group cell cell--12">
             <header class="group__header">
-                <h2><a href="{{url('groups/' . $group->id . '/edit')}}">{{$group->name}}: &Oslash;{{$group->getAverage()}}</a>
-                </h2>
+                <h2><a href="{{url('groups/' . $group->id . '/edit')}}">{{$group->name}}</a></h2>
+                <span class="group__average">&Oslash;{{$group->getAverage()}}</span>
             </header>
             <div class="group__wrapper">
                 <div class="group__content">

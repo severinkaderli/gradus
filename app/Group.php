@@ -37,8 +37,10 @@ class Group extends Model
         $gradeArray = [];
         $factorArray = [];
         foreach ($subjects as $subject) {
-            array_push($gradeArray, $subject->getAverage() * $subject->factor);
-            array_push($factorArray, $subject->factor);
+            if($subject->getAverage() > 0) {
+                array_push($gradeArray, $subject->getAverage() * $subject->factor);
+                array_push($factorArray, $subject->factor);
+            }
         }
         if (!empty($gradeArray) && !empty($factorArray)) {
             return round(array_sum($gradeArray) / array_sum($factorArray), 1);
