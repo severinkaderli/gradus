@@ -154,6 +154,7 @@ body {
     border-bottom: 1px solid #000;
     background-color: #3C5499;
     color: #FFF;
+    position: relative;
 }
 
 .group__header h2 {
@@ -167,6 +168,15 @@ body {
 
 .group__header h2 a:hover {
     text-decoration: underline;
+}
+
+.group__average {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+    font-weight: bold;
 }
 
 .group__content {}
