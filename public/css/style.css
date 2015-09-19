@@ -161,6 +161,14 @@ body {
     font-size: 1em;
 }
 
+.group__header h2 a {
+    color: #fff;
+}
+
+.group__header h2 a:hover {
+    text-decoration: underline;
+}
+
 .group__content {}
 
 .group__footer {
