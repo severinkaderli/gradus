@@ -7,41 +7,36 @@
 @section('content')
 
     @include('errors._list')
-    {!! Form::open(['url' => 'register'])!!}
+    <div class="cell cell--6 cell--center">
+        <h1>Register</h1>
+        {!! Form::open(['url' => 'register'])!!}
 
-            <!-- firstname Textfield-->
-        <div>
-            {!! Form::text('firstname', null, ['id' => 'firstname']) !!}
-            {!! Form::label('firstname', 'Vorname') !!}
-        </div>
+            <div class="input--group">
+                {!! Form::label('firstname', 'Vorname') !!}
+                {!! Form::text('firstname', null, ['id' => 'firstname']) !!}
+            </div>
 
-        <!-- lastname Textfield-->
-        <div>
-            {!! Form::text('lastname', null, ['id' => 'lastname']) !!}
-            {!! Form::label('lastname', 'Name') !!}
-        </div>
+            <div class="input--group">
+                {!! Form::label('lastname', 'Name') !!}
+                {!! Form::text('lastname', null, ['id' => 'lastname']) !!}
+            </div>
 
-        <!-- email Textfield-->
-        <div>
-            {!! Form::email('email', null, ['id' => 'email']) !!}
-            {!! Form::label('email', 'E-Mail') !!}
-        </div>
+            <div class="input--group">
+                {!! Form::label('email', 'E-Mail') !!}
+                {!! Form::email('email', null, ['id' => 'email']) !!}
+            </div>
 
-        <!-- password Textfield-->
-        <div>
-            {!! Form::password('password', ['id' => 'password']) !!}
-            {!! Form::label('password', 'Passwort') !!}
-        </div>
+            <div class="input--group">
+                {!! Form::label('password', 'Passwort') !!}
+                {!! Form::password('password', ['id' => 'password']) !!}
+            </div>
 
-        <!-- password_confirmation Textfield-->
-        <div>
-            {!! Form::password('password_confirmation', ['id' => 'password_confirmation']) !!}
-            {!! Form::label('password_confirmation', 'Passwortbestätigen') !!}
-        </div>
+            <div class="input--group">
+                {!! Form::label('password_confirmation', 'Passwort best&auml;tigen') !!}
+                {!! Form::password('password_confirmation', ['id' => 'password_confirmation']) !!}
+            </div>
 
-        <!-- register Submit Button -->
-        <div>
             {!! Form::submit('Register', ['id' => 'register', 'name' => 'register']) !!}
-        </div>
-    {!! Form::close() !!}
+        {!! Form::close() !!}
+    </div>
 @stop

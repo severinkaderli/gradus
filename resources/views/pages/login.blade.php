@@ -10,7 +10,6 @@
         <h1>Login</h1>
         {!! Form::open(['url' => 'login'])!!}
 
-
         <div class="input--group">
             {!! Form::label('email', 'E-Mail') !!}
             {!! Form::email('email', null, ['id' => 'email']) !!}
@@ -22,8 +21,8 @@
         </div>
 
         <div class="input--group">
-            {!! Form::label('remember', 'Remember password') !!}
             {!! Form::checkbox('remember', '', false, ['id' => 'remember']) !!}
+            {!! Form::label('remember', 'Remember password') !!}
         </div>
 
         <div class="input--group">
