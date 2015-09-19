@@ -9,7 +9,7 @@ class Group extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'user_id'];
+    protected $fillable = ['name'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

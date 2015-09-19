@@ -91,7 +91,6 @@
         </div>
         <!-- Footer END -->
     </div>
-
     <!-- Body JS -->
     @yield('bodyJS')
 </body>

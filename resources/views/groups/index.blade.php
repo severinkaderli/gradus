@@ -47,5 +47,5 @@
             </div>
         </div>
     @endforeach
-    <a class="btn" href="">Add group</a>
+    <a class="btn" href="{{url('groups/create')}}">Add group</a>
 @stop

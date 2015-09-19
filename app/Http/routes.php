@@ -27,3 +27,4 @@ Route::get('/', 'PageController@home');
 
 //Groups
 Route::resource('groups', "GroupController");
+
