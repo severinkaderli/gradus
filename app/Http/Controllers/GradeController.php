@@ -52,11 +52,15 @@ class GradeController extends Controller
      */
     public function edit($id)
     {
+        $grade = Grade::findOrFail($id);
+        if ($grade->subject->group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
+
         $grades = [];
         for($i=6.0;$i>=1.0;$i-=0.1) {
             $grades[strval($i)] = number_format($i, 1);
         }
-        $grade = Grade::findOrFail($id);
         return view('grades.edit', compact('grade', 'grades'));
     }
 
@@ -72,8 +76,11 @@ class GradeController extends Controller
             'factor' => 'required'
         ]);
         $grade = Grade::findOrFail($id);
-        $grade->update(Request::all());
+        if ($grade->subject->group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
 
+        $grade->update(Request::all());
         return redirect('groups');
     }
 
@@ -84,8 +91,11 @@ class GradeController extends Controller
     public function destroy($id)
     {
         $grade = Grade::findOrFail($id);
-        $grade->delete();
+        if ($grade->subject->group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
 
+        $grade->delete();
         return redirect('groups');
     }
 }

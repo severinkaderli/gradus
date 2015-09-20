@@ -51,11 +51,16 @@ class SubjectController extends Controller
     public function edit($id)
     {
         $subject = Subject::findOrFail($id);
+        if ($subject->group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
         return view('subjects.edit', compact('subject'));
     }
 
     /**
      * @param $id
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function update($id, \Illuminate\Http\Request $request)
     {
@@ -65,22 +70,26 @@ class SubjectController extends Controller
             'factor' => 'required'
         ]);
         $subject = Subject::findOrFail($id);
-        $subject->update(Request::all());
+        if ($subject->group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
 
+        $subject->update(Request::all());
         return redirect('groups');
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return Response
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function destroy($id)
     {
         $subject = Subject::findOrFail($id);
-        $subject->delete();
+        if ($subject->group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
 
+        $subject->delete();
         return redirect('groups');
     }
 }

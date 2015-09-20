@@ -49,6 +49,9 @@ class GroupController extends Controller
     public function edit($id)
     {
         $group = Group::findOrFail($id);
+        if ($group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
         return view('groups.edit', compact('group'));
     }
 
@@ -59,14 +62,21 @@ class GroupController extends Controller
         ]);
 
         $group = Group::findOrFail($id);
-        $group->update(Request::all());
+        if ($group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
 
+        $group->update(Request::all());
         return redirect('groups');
     }
 
     public function destroy($id)
     {
         $group = Group::findOrFail($id);
+        if ($group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
+
         $group->delete();
         return redirect('groups');
     }
