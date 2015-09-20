@@ -28,6 +28,24 @@ class Group extends Model
     }
 
     /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeArchived($query)
+    {
+        return $query->where('archived', 1);
+    }
+
+    /**
+     * @param $query
+     * @return mixed
+     */
+    public function scopeUnArchived($query)
+    {
+        return $query->where('archived', 0);
+    }
+
+    /**
      * @return float
      */
     //TODO: Optimize this code

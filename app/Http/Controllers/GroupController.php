@@ -22,8 +22,14 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Auth::user()->groups()->latest()->get();
+        $groups = Auth::user()->groups()->get();
         return view('groups.index', compact('groups'));
+    }
+
+    public function archiveIndex()
+    {
+        $groups = Auth::user()->groups()->archived()->get();
+        return view('groups.archive', compact('groups'));
     }
 
     public function create()

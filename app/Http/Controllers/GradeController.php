@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Request;
 use App\Grade;
-use App\Subject;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use App\Subject;
+use Request;
 
 class GradeController extends Controller
 {
@@ -23,7 +22,7 @@ class GradeController extends Controller
     {
         $subjectId = $id;
         $grades = [];
-        for($i=6.0;$i>=1.0;$i-=0.1) {
+        for ($i = 6.0; $i >= 1.0; $i -= 0.1) {
             $grades[strval($i)] = number_format($i, 1);
         }
         return view('grades.create', compact('subjectId', 'grades'));
@@ -58,7 +57,7 @@ class GradeController extends Controller
         }
 
         $grades = [];
-        for($i=6.0;$i>=1.0;$i-=0.1) {
+        for ($i = 6.0; $i >= 1.0; $i -= 0.1) {
             $grades[strval($i)] = number_format($i, 1);
         }
         return view('grades.edit', compact('grade', 'grades'));

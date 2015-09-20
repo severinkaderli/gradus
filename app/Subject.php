@@ -28,15 +28,6 @@ class Subject extends Model
     }
 
     /**
-     * @param $query
-     * @return mixed
-     */
-    public function scopeArchived($query)
-    {
-        return $query->where('archived', 1);
-    }
-
-    /**
      * @return float
      */
     //Optimize this code

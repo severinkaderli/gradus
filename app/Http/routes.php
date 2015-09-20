@@ -27,6 +27,9 @@ Route::get('/', 'PageController@home');
 
 //Groups
 Route::resource('groups', "GroupController");
+Route::post('groups/{groups}/archive', "GroupController@archive");
+Route::post('groups/{groups}/unarchive', "GroupController@unarchive");
+Route::get('archive', "GroupController@archiveIndex");
 
 //Subjects
 Route::get('groups/{groups}/subjects/create', "SubjectController@create");
