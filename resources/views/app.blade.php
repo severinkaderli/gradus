@@ -38,7 +38,7 @@
         <header id="header" class="cell cell--12">
             <div id="header--content" class="grid fullWidth">
                 <div id="header--logo" class="cell cell--3">
-                    &#x2713;gradus
+                    <a href="{{url('/')}}">&#x2713;gradus</a>
                 </div>
                 <nav id="header--navigation" class="cell cell--9 right">
                     <ul>

@@ -69,6 +69,10 @@ body {
 #header--logo {
 }
 
+#header--logo a {
+    color: #fff;
+}
+
 #header--logo h1 {
     margin: 0;
 }

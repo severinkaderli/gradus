@@ -11,6 +11,12 @@
 
         @include('groups._form', ['buttonLabel' => 'Update group'])
         <a class="btn inline" data-method="delete" data-confirm="Are you sure?" href="{{url('groups/' . $group->id)}}">Delete group</a>
+        @if($group->archived == 0)
+            <a class="btn inline" data-method="put" data-confirm="Are you sure?" href="{{url('groups/' . $group->id . '/archive')}}">Archive group</a>
+        @else
+            <a class="btn inline" data-method="put" data-confirm="Are you sure?" href="{{url('groups/' . $group->id . '/unarchive')}}">Unarchive group</a>
+        @endif
+
         {!! Form::close() !!}
     </div>
 @stop

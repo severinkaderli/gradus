@@ -22,7 +22,7 @@ class GroupController extends Controller
      */
     public function index()
     {
-        $groups = Auth::user()->groups()->get();
+        $groups = Auth::user()->groups()->unArchived()->get();
         return view('groups.index', compact('groups'));
     }
 
@@ -85,6 +85,40 @@ class GroupController extends Controller
 
         $group->delete();
         return redirect('groups');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function archive($id)
+    {
+        $group = Group::findOrFail($id);
+        if ($group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
+
+        $group->archived = 1;
+        $group->update();
+
+        return redirect('groups');
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function unarchive($id)
+    {
+        $group = Group::findOrFail($id);
+        if ($group->user->id != Auth::id()) {
+            return redirect('groups');
+        }
+
+        $group->archived = 0;
+        $group->update();
+
+        return redirect('archive');
     }
 
 }
