@@ -6,6 +6,7 @@ use App\Grade;
 use App\Http\Requests;
 use App\Subject;
 use Request;
+use Auth;
 
 class GradeController extends Controller
 {
@@ -25,7 +26,10 @@ class GradeController extends Controller
         for ($i = 6.0; $i >= 1.0; $i -= 0.1) {
             $grades[strval($i)] = number_format($i, 1);
         }
-        return view('grades.create', compact('subjectId', 'grades'));
+
+        $defaultGrade = '5';
+        $defaultFactor = '1';
+        return view('grades.create', compact('subjectId', 'grades', 'defaultGrade', 'defaultFactor'));
     }
 
     /**
@@ -60,7 +64,10 @@ class GradeController extends Controller
         for ($i = 6.0; $i >= 1.0; $i -= 0.1) {
             $grades[strval($i)] = number_format($i, 1);
         }
-        return view('grades.edit', compact('grade', 'grades'));
+
+        $defaultGrade = $grade -> grade;
+        $defaultFactor = $grade -> factor;
+        return view('grades.edit', compact('grade', 'grades', 'defaultGrade', 'defaultFactor'));
     }
 
     /**

@@ -7,6 +7,7 @@ use App\Group;
 use App\Http\Requests;
 use App\Subject;
 use Request;
+use Auth;
 
 class SubjectController extends Controller
 {
@@ -23,7 +24,8 @@ class SubjectController extends Controller
     public function create($id)
     {
         $groupId = $id;
-        return view('subjects.create', compact('groupId'));
+        $defaultFactor = '1';
+        return view('subjects.create', compact('groupId', 'defaultFactor'));
     }
 
     /**
@@ -53,7 +55,8 @@ class SubjectController extends Controller
         if ($subject->group->user->id != Auth::id()) {
             return redirect('groups');
         }
-        return view('subjects.edit', compact('subject'));
+        $defaultFactor = $subject -> factor;
+        return view('subjects.edit', compact('subject', 'defaultFactor'));
     }
 
     /**
