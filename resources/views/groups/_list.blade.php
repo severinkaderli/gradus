@@ -28,7 +28,7 @@
                                 @endif
                             </div>
                             <div class="subject__footer__add">
-                                <a class="btn" href="{{url('subjects/' . $subject->id . '/grades/create')}}">Add
+                                <a class="form--button" href="{{url('subjects/' . $subject->id . '/grades/create')}}">Add
                                     grade</a>
                             </div>
 
@@ -38,7 +38,7 @@
                 @endforeach
             </div>
             <footer class="group__footer">
-                <a class="btn" href="{{url('groups/' . $group->id . '/subjects/create')}}">Add Subject</a>
+                <a class="form--button" href="{{url('groups/' . $group->id . '/subjects/create')}}">Add Subject</a>
             </footer>
         </div>
     </div>

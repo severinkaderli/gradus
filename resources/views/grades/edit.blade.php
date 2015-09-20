@@ -9,8 +9,14 @@
         <h1>Edit grade</h1>
         {!! Form::model($grade, ['method' => 'PATCH', 'action' => ['GradeController@update', $grade->id]])!!}
 
-        @include('grades._form', ['buttonLabel' => 'Update grade'])
-        <a class="btn inline" data-method="delete" data-confirm="Are you sure?" href="{{url('grades/' . $grade->id)}}">Delete grade</a>
+        @include('grades._form')
+        <div class="input--group">
+            {!! Form::submit('Update grade', ['id' => 'login']) !!}
+            <a class="form--button"
+               data-method="delete"
+               data-confirm="Are you sure?"
+               href="{{url('grades/' . $grade->id)}}">Delete grade</a>
+        </div>
         {!! Form::close() !!}
     </div>
 @stop

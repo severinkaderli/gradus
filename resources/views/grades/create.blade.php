@@ -9,7 +9,10 @@
         <h1>Create grade</h1>
         {!! Form::open(['url' => 'subjects/' . $subjectId  . '/grades'])!!}
 
-        @include('grades._form', ['buttonLabel' => 'Add grade'])
+        @include('grades._form')
+        <div class="input--group">
+            {!! Form::submit('Add grade', ['id' => 'login']) !!}
+        </div>
 
         {!! Form::close() !!}
     </div>

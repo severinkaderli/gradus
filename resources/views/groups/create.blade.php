@@ -9,8 +9,10 @@
             <h1>Create group</h1>
             {!! Form::open(['url' => 'groups'])!!}
 
-            @include('groups._form', ['buttonLabel' => 'Add group'])
-
+            @include('groups._form')
+            <div class="input--group">
+                {!! Form::submit('Add group', ['id' => 'createGroupSubmit']) !!}
+            </div>
             {!! Form::close() !!}
         </div>
 @stop
