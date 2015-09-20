@@ -12,10 +12,14 @@ use App\Group;
 class SubjectController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
+     * @param $id
+     * @return \Illuminate\View\View
      */
     public function create($id)
     {
@@ -24,10 +28,9 @@ class SubjectController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  Request  $request
-     * @return Response
+     * @param $id
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function store($id, \Illuminate\Http\Request $request)
     {
@@ -42,10 +45,8 @@ class SubjectController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return Response
+     * @param $id
+     * @return \Illuminate\View\View
      */
     public function edit($id)
     {

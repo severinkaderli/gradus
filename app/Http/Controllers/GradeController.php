@@ -10,6 +10,11 @@ use App\Http\Controllers\Controller;
 
 class GradeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * @param $id
      * @return \Illuminate\View\View
