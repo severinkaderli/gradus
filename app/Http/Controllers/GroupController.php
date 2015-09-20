@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Group;
 use App\Http\Requests;
 use Auth;
-use App\Group;
 use Request;
 
 
@@ -29,8 +29,13 @@ class GroupController extends Controller
     /**
      * @return \Illuminate\View\View
      */
-    public function store()
+    public function store(\Illuminate\Http\Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required|max:255',
+        ]);
+
         $group = new Group(Request::all());
         Auth::user()->groups()->save($group);
         return redirect('groups');
@@ -42,8 +47,12 @@ class GroupController extends Controller
         return view('groups.edit', compact('group'));
     }
 
-    public function update($id)
+    public function update($id, \Illuminate\Http\Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+        ]);
+
         $group = Group::findOrFail($id);
         $group->update(Request::all());
 

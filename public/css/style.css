@@ -36,7 +36,7 @@ body {
 #apps--content ul li a {
     padding: 5px 10px;
     color: white;
-    dispaly: inline-block;
+    display: inline-block;
     text-decoration: none;
 }
 
@@ -116,7 +116,7 @@ body {
 #footer {
     background-color: #3C5499;
     color: #FFF;
-    padding: 20px 10px;
+    padding: 20px 20px;
 }
 
 #footer ul {
@@ -137,7 +137,7 @@ body {
 #footer__copyright {
     background-color: #273A71;
     color: #FFF;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 /********/

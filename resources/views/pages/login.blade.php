@@ -5,7 +5,6 @@
 @stop
 
 @section('content')
-    @include('errors._list')
     <div class="cell cell--6 cell--center">
         <h1>Login</h1>
         {!! Form::open(['url' => 'login'])!!}

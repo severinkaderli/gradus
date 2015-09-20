@@ -26,10 +26,15 @@ class GradeController extends Controller
 
     /**
      * @param $id
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store($id)
+    public function store($id, \Illuminate\Http\Request $request)
     {
+        $this->validate($request, [
+            'grade' => 'required',
+            'factor' => 'required'
+        ]);
         $subject = Subject::findOrFail($id);
         $grade = new Grade(Request::all());
         $subject->grades()->save($grade);
@@ -52,10 +57,15 @@ class GradeController extends Controller
 
     /**
      * @param $id
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update($id)
+    public function update($id, \Illuminate\Http\Request $request)
     {
+        $this->validate($request, [
+            'grade' => 'required',
+            'factor' => 'required'
+        ]);
         $grade = Grade::findOrFail($id);
         $grade->update(Request::all());
 

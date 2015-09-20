@@ -29,8 +29,12 @@ class SubjectController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store($id)
+    public function store($id, \Illuminate\Http\Request $request)
     {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'factor' => 'required'
+        ]);
         $group = Group::findOrFail($id);
         $subject = new Subject(Request::all());
         $group->subjects()->save($subject);
@@ -52,8 +56,13 @@ class SubjectController extends Controller
     /**
      * @param $id
      */
-    public function update($id)
+    public function update($id, \Illuminate\Http\Request $request)
     {
+
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'factor' => 'required'
+        ]);
         $subject = Subject::findOrFail($id);
         $subject->update(Request::all());
 

@@ -61,6 +61,7 @@
         <!-- Content START -->
         <main id="contentWrapper" class="cell cell--12">
             <div id="content" class="grid fullWidth">
+                @include('errors._list')
                 @yield('content')
             </div>
         </main>
