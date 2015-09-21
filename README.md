@@ -7,3 +7,4 @@ Web based grade manager for managing grades.
 * Managing of subjects
 * Managing of grades
 * Correct calculation of averages and the like
+* Archive of groups
