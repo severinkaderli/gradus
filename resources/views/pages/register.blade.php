@@ -34,7 +34,10 @@
                 {!! Form::password('password_confirmation', ['id' => 'password_confirmation']) !!}
             </div>
 
-            {!! Form::submit('Register', ['id' => 'register', 'name' => 'register']) !!}
+            <div class="input--group">
+                {!! Form::submit('Register', ['id' => 'register', 'name' => 'register']) !!}
+            </div>
+
         {!! Form::close() !!}
     </div>
 @stop
