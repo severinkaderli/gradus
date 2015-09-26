@@ -40,7 +40,7 @@
                 <div id="header--logo" class="cell cell--3">
                     <a href="{{url('/')}}">&#x2713;gradus</a>
                 </div>
-                <nav id="header--navigation" class="cell cell--9 right">
+                <nav id="header--navigation" class="cell cell--9 nav right">
                     <ul>
                         @if(!Auth::check())
                             <li><a href="{{url('login')}}">Login</a></li>

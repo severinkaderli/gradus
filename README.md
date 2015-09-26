@@ -2,9 +2,8 @@
 Web based grade manager for managing grades.
 
 ##Features
-* Registering and login
-* Managing of grade collections
-* Managing of subjects
-* Managing of grades
-* Correct calculation of averages and the like
-* Archive of groups
+* Creation of new user accounts
+* Authentication
+* Managing of grade groups (Subjects, Grades)
+* Correct calculation of averages of groups and subjects
+* Archive of old groups
