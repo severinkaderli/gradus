@@ -1,16 +1,43 @@
-var elixir = require('laravel-elixir');
+var gulp = require('gulp'),
+    sass = require('gulp-ruby-sass'),
+    autoprefixer = require('gulp-autoprefixer'),
+    minifycss = require('gulp-minify-css'),
+    jshint = require('gulp-jshint'),
+    uglify = require('gulp-uglify'),
+    imagemin = require('gulp-imagemin'),
+    rename = require('gulp-rename'),
+    concat = require('gulp-concat'),
+    notify = require('gulp-notify'),
+    cache = require('gulp-cache'),
+    del = require('del');
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Sass
- | file for our application, as well as publishing vendor resources.
- |
+/**
+ * Compile SCSS files to css, minifies and rename to .min.css
  */
-
-elixir(function(mix) {
-    mix.sass('app.scss');
+gulp.task('sass', function () {
+ return sass('src/sass/**/*', {style: 'expanded'})
+     .pipe(gulp.dest('build/css'))
+     .pipe(rename({suffix: '.min'}))
+     .pipe(minifycss())
+     .pipe(gulp.dest('build/css'))
+     .pipe(notify('SASS Task Complete'));
 });
+
+/**
+ * JSHint, Javascript concatenation, uglifying and renaming to .min.js
+ */
+gulp.task('js', function () {
+ return gulp.src('src/js/**/*.js')
+     .pipe(jshint())
+     .pipe(jshint.reporter('default'))
+     .pipe(concat('simplex.js'))
+     .pipe(rename({suffix: '.min'}))
+     .pipe(uglify())
+     .pipe(gulp.dest('build/js'))
+     .pipe(notify('JS Task Complete'));
+});
+
+/**
+ * Default task
+ */
+gulp.task('default', ['sass', 'js']);

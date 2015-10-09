@@ -10,12 +10,6 @@ body {
     min-height: 100vh;
 }
 
-.fullWidth {
-    width: 1020px;
-    margin: 0 auto;
-    max-width: 100%;
-}
-
 /*App-List*/
 #apps {
     background-color: #000;
