@@ -74,29 +74,34 @@
     <!-- Content END -->
     <!-- Footer START -->
     <footer id="footer" class="cell cell--12">
-        <div id="footer__content" class="grid container">
-            <div class="cell cell--6">
-                <h3>About</h3>
+        <div id="footer__content" class="grid">
+            <div class="container">
+                <div class="cell cell--6">
+                    <h3>About</h3>
 
-                <p>This is a site for managing your marks blablablub</p>
-            </div>
-            <div class="cell cell--6">
-                <h3>Links</h3>
-                <ul>
-                    <li><a href="https://github.com/severinkaderli/gradus">GitHub</a></li>
-                    <li><a href="https://github.com/severinkaderli/simplex.css">simplex.css</a></li>
-                    <li><a href="http://severinkaderli.ch">severinkaderli.ch</a></li>
-                </ul>
+                    <p>This is a site for managing your marks blablablub</p>
+                </div>
+                <div class="cell cell--6">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="https://github.com/severinkaderli/gradus">GitHub</a></li>
+                        <li><a href="https://github.com/severinkaderli/simplex.css">simplex.css</a></li>
+                        <li><a href="http://severinkaderli.ch">severinkaderli.ch</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
+        <div id="footer__copyright" class="grid">
+            <div class="container">
+                <div class="cell cell--12">
+                    &copy; 2015 - Severin Kaderli
+                </div>
+            </div>
+
+        </div>
+
     </footer>
-    <div id="footer__copyright" class="cell cell--12">
-        <div id="footer_copyright__content" class="grid container">
-            <div class="cell cell--12">
-                &copy; 2015 - Severin Kaderli
-            </div>
-        </div>
-    </div>
+
     <!-- Footer END -->
 </div>
 <!-- Body JS -->
