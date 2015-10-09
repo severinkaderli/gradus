@@ -1,5 +1,5 @@
 # gradus
-Web based grade manager for managing grades.
+Web based grade manager for managing grades. The most current version can be found at [gradus.severinkaderli.ch](http://gradus.severinkaderli.ch)
 
 ##Features
 * Creation of new user accounts
