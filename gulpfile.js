@@ -1,6 +1,5 @@
 var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
-    autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
@@ -8,32 +7,30 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     concat = require('gulp-concat'),
     notify = require('gulp-notify'),
-    cache = require('gulp-cache'),
-    del = require('del');
+    cache = require('gulp-cache');
 
 /**
  * Compile SCSS files to css, minifies and rename to .min.css
  */
 gulp.task('sass', function () {
- return sass('src/sass/**/*', {style: 'expanded'})
-     .pipe(gulp.dest('build/css'))
+ return sass('public/sass/**/*', {style: 'expanded'})
      .pipe(rename({suffix: '.min'}))
      .pipe(minifycss())
-     .pipe(gulp.dest('build/css'))
-     .pipe(notify('SASS Task Complete'));
+     .pipe(gulp.dest('public/assets/css'))
+     .pipe(notify('SASS Task completed'));
 });
 
 /**
  * JSHint, Javascript concatenation, uglifying and renaming to .min.js
  */
 gulp.task('js', function () {
- return gulp.src('src/js/**/*.js')
+ return gulp.src('public/js/**/*.js')
      .pipe(jshint())
      .pipe(jshint.reporter('default'))
-     .pipe(concat('simplex.js'))
+     .pipe(concat('gradus.js'))
      .pipe(rename({suffix: '.min'}))
      .pipe(uglify())
-     .pipe(gulp.dest('build/js'))
+     .pipe(gulp.dest('public/assets/js'))
      .pipe(notify('JS Task Complete'));
 });
 

@@ -15,8 +15,8 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet'
           type='text/css'>
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/simplex.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('css/main.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/simplex.css/dist/css/simplex.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">
     @yield('extraCSS')
             <!-- JS Files -->
     @yield('extraJS')
@@ -105,7 +105,8 @@
     <!-- Footer END -->
 </div>
 <!-- Body JS -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="{{URL::asset('vendor/jquery/dist/jquery.min.js')}}"></script>
+<script src="{{URL::asset('assets/js/gradus.min.js')}}"></script>
 @yield('bodyJS')
 </body>
 </html>
