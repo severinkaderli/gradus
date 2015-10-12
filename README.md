@@ -7,3 +7,5 @@ Web based grade manager for managing grades. The most current version can be fou
 * Managing of grade groups (Subjects, Grades)
 * Correct calculation of averages of groups and subjects
 * Archive of old groups
+
+##How to install
