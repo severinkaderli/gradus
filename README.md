@@ -9,3 +9,4 @@ Web based grade manager for managing grades. The most current version can be fou
 * Archive of old groups
 
 ##How to install
+1. git clone
