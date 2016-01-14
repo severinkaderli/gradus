@@ -19,7 +19,5 @@
     "tests"
   ],
   "dependencies": {
-    "simplex.css": "~0.3.8",
-    "jquery": "~2.1.4"
   }
 }

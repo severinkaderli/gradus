@@ -5,28 +5,29 @@
 @stop
 
 @section('content')
-    <div class="cell cell--6 cell--center">
-        <h1>Login</h1>
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <h1 class="card-title">Login</h1>
         {!! Form::open(['url' => 'login'])!!}
 
-        <div class="input--group">
+        <fieldset class="form-group">
             {!! Form::label('email', 'E-Mail') !!}
-            {!! Form::email('email', null, ['id' => 'email']) !!}
-        </div>
+            {!! Form::email('email', null, ['id' => 'email', 'class' => 'form-control']) !!}
+        </fieldset>
 
-        <div class="input--group">
+        <fieldset class="form-group">
             {!! Form::label('password', 'Passwort') !!}
-            {!! Form::password('password', ['id' => 'password']) !!}
-        </div>
+            {!! Form::password('password', ['id' => 'password', 'class' => 'form-control']) !!}
+        </fieldset>
 
-        <div class="input--group">
+        <fieldset class="form-group">
             {!! Form::checkbox('remember', '', false, ['id' => 'remember']) !!}
             {!! Form::label('remember', 'Remember password') !!}
-        </div>
+        </fieldset>
 
-        <div class="input--group">
-            {!! Form::submit('Login', ['id' => 'login', 'name' => 'login']) !!}
-        </div>
+        <fieldset class="form-group">
+            {!! Form::submit('Login', ['id' => 'login', 'name' => 'login', 'class' => 'btn btn-primary']) !!}
+        </fieldset>
 
         {!! Form::close() !!}
     </div>

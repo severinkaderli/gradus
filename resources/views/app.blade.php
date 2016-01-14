@@ -15,61 +15,50 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet'
           type='text/css'>
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/simplex.css/dist/css/simplex.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/bootstrap/dist/css/bootstrap.min.css')}}">
+    <!--<link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">-->
+    <style>
+    .container {
+        max-width: 1020px;
+    }
+    </style>
+
     @yield('extraCSS')
-            <!-- JS Files -->
+    <!-- JS Files -->
+    <script src="{{URL::asset('vendor/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     @yield('extraJS')
 </head>
 <body>
-<div id="wrapper" class="grid">
-    <!-- Appbar START -->
-    <div id="apps" class="cell cell--12">
-        <div id="apps--content" class="grid fullWidth">
-            <nav id="app--links">
-                <ul>
-                    <li class="active"><a href="">gradus</a></li>
-                    <li class="inactive"><a href="http://memento.severinkaderli.ch">memento</a></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-    <!-- Appbar END -->
+    <nav class="navbar navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="{{url('/')}}">&#x2713;gradus</a>
+            <ul class="nav navbar-nav">
 
-    <!-- Header START -->
-    <nav class="navbar">
-        <div class="navbar__content container">
-            <!-- Logo here -->
-            <div class="navbar__logo navbar__item">
-                <a href="{{url('/')}}">&#x2713;gradus</a>
-            </div>
-            <span class="navbar__spacer"></span>
-            <ul class="navbar__nav navbar__item">
                 @if(!Auth::check())
-                    <li><a href="{{url('login')}}">Login</a></li>
-                    <li><a href="{{url('register')}}">Register</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('login')}}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('register')}}">Register</a>
+                    </li>
                 @else
-                    <li><a href="{{url('archive')}}">Archive</a></li>
-                    <li><a href="{{url('logout')}}">Logout</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('archive')}}">Archive</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url('logout')}}">Logout</a>
+                    </li>
                 @endif
             </ul>
-            <form class="navbar__form navbar__item">
-                <div class="input--group">
-                    <input type="search" placeholder="search..."/>
-                    <input type="submit" value="Send">
-                </div>
-
-            </form>
         </div>
     </nav>
     <!-- Header END -->
 
     <!-- Content START -->
-    <main id="contentWrapper" class="cell cell--12">
-        <div id="content" class="grid container">
+    <main class="container">
             @include('errors._list')
             @yield('content')
-        </div>
     </main>
     <!-- Content END -->
     <!-- Footer START -->
