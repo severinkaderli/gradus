@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <meta name="_token" content="{{ csrf_token() }}">
+    <meta name="_error" content="{{ $errors->any() ? 1 : 0 }}">
     <base href="{{URL::to('/')}}">
     <!-- SEO Information -->
     <title>gradus - @yield('title')</title>
@@ -28,6 +29,7 @@
     <script src="{{URL::asset('vendor/jquery/dist/jquery.min.js')}}"></script>
     <script src="{{URL::asset('vendor\tether\dist\js\tether.min.js')}}"></script>
     <script src="{{URL::asset('vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
     @yield('extraJS')
 </head>
 <body>
@@ -88,7 +90,6 @@
     <!-- Footer END -->
 </div>
 <!-- Body JS -->
-<script src="{{URL::asset('assets/js/gradus.min.js')}}"></script>
 @yield('bodyJS')
 </body>
 </html>
