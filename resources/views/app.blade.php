@@ -26,6 +26,7 @@
     @yield('extraCSS')
     <!-- JS Files -->
     <script src="{{URL::asset('vendor/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('vendor\tether\dist\js\tether.min.js')}}"></script>
     <script src="{{URL::asset('vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     @yield('extraJS')
 </head>
