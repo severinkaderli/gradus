@@ -77,7 +77,7 @@
 
         <fieldset class="form-group">
             {!! Form::submit('Login', ['id' => 'login', 'name' => 'login', 'class' => 'btn btn-primary']) !!}
-            or <a href="{{url('/register')}}">sign-up</a>
+            or <a href="{{url('/register')}}">create an account</a>
         </fieldset>
 
         {!! Form::close() !!}
