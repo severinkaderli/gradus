@@ -1,5 +1,5 @@
 var gulp = require('gulp'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     minifycss = require('gulp-minify-css'),
     jshint = require('gulp-jshint'),
     uglify = require('gulp-uglify'),
@@ -13,7 +13,8 @@ var gulp = require('gulp'),
  * Compile SCSS files to css, minifies and rename to .min.css
  */
 gulp.task('sass', function () {
- return sass('public/sass/**/*', {style: 'expanded'})
+ return gulp.src('public/sass/**/*')
+     .pipe(sass().on('error', sass.logError))
      .pipe(rename({suffix: '.min'}))
      .pipe(minifycss())
      .pipe(gulp.dest('public/assets/css'))

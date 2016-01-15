@@ -16,7 +16,7 @@
           type='text/css'>
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/bootstrap/dist/css/bootstrap.min.css')}}">
-    <!--<link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">-->
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">
     <style>
     .container {
         max-width: 1020px;
@@ -59,13 +59,13 @@
     <!-- Header END -->
 
     <!-- Content START -->
-    <main >
+    <main id="content">
             @include('errors._list')
             @yield('content')
     </main>
     <!-- Content END -->
     <!-- Footer START -->
-    <footer class="navbar navbar-dark bg-primary">
+    <footer id="footer" class="bg-primary">
         <div class="container">
             <div class="col-sm-4">
                 <h3>About</h3>
@@ -83,17 +83,11 @@
             <div class="col-sm-4">
                 &copy; 2015 - Severin Kaderli
             </div>
-
         </div>
     </footer>
-
-                    
-
-
     <!-- Footer END -->
 </div>
 <!-- Body JS -->
-<script src="{{URL::asset('vendor/jquery/dist/jquery.min.js')}}"></script>
 <script src="{{URL::asset('assets/js/gradus.min.js')}}"></script>
 @yield('bodyJS')
 </body>
