@@ -14,3 +14,4 @@ Web based grade manager for managing grades. The most current version can be fou
 3. Copy .env.example to .env and modify it to your needs
 4. php artisan migrate
 5. bower install
+6. enjoy
