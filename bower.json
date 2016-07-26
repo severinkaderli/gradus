@@ -19,7 +19,6 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "v4.0.0-alpha.2",
-    "tether": "~1.1.1"
+    "material-design-lite": "^1.1.3"
   }
 }

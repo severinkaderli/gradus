@@ -9,94 +9,78 @@
     <base href="{{URL::to('/')}}">
     <!-- SEO Information -->
     <title>gradus - @yield('title')</title>
-    <meta name="description" content="gradus let you manage your grades with ease.">
+    <meta name="description" content="gradus lets you manage your grades with ease.">
     <meta name="keywords" content="gradus, mark, grades, marks, subject, subjects, tests, success, severin, kaderli">
     <meta name="author" content="Severin Kaderli">
     <!-- Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet'
-          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{URL::asset('bower_components/material-design-lite/material.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('bower_components/bootstrap-material-design/dist/css/ripples.min.css')}}">
-    <style>
-    .container {
-        max-width: 1020px;
-    }
-    </style>
-
     @yield('extraCSS')
+    <style>
+        .mdl-card {
+            width: 100%;
+            max-width: 100%;
+            height: 100%;
+        }
+
+        .mdl-layout__content {
+            max-width: 1024px;
+            margin: 0 auto;
+        }
+    </style>
     <!-- JS Files -->
-    <script src="{{URL::asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{URL::asset('bower_components\tether\dist\js\tether.min.js')}}"></script>
-    <script src="{{URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-    <script src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
-    <scritp src="{{URL::asset('bower_components/bootstrap-material-design/dist/js/material.min.js')}}"></script>
-    <scritp src="{{URL::asset('bower_components/bootstrap-material-design/dist/js/ripples.min.js')}}"></script>
+    <script async src="{{URL::asset('bower_components/material-design-lite/material.min.js')}}"></script>
     @yield('extraJS')
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-primary">
+    <div class="mdl-layout mdl-layout--fixed-tabs mdl-layout--no-desktop-drawer-button mdl-js-layout mdl-layout--fixed-header">
 
-        <div class="container">
+        <header class="mdl-layout__header">
+            <div class="mdl-layout__header-row">
+                <!-- Title -->
+                <span class="mdl-layout-title">gradus - @yield('title')</span>
 
-            <a class="navbar-brand" href="{{url('/')}}">&#x2713;gradus</a>
-            <ul class="nav navbar-nav">
+                <div class="mdl-layout-spacer"></div>
 
+                <nav class="mdl-navigation mdl-layout--large-screen-only">
+                    @if(!Auth::check())
+                        <a href="{{url('login')}}" class="is-active mdl-navigation__link">Login</a>
+                        <a href="{{url('register')}}" class="is-active mdl-navigation__link">Register</a>
+                    @else
+                        <a href="{{url('archive')}}" class="is-active mdl-navigation__link">Archive</a>
+                        <a href="{{url('logout')}}" class="is-active mdl-navigation__link">Logout</a>
+                    @endif
+                </nav>
+            </div>
+        </header>
+        <div class="mdl-layout__drawer">
+            <span class="mdl-layout-title">gradus - @yield('title')</span>
+            <nav class="mdl-navigation">
                 @if(!Auth::check())
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('login')}}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('register')}}">Register</a>
-                    </li>
+                    <a href="{{url('login')}}" class="is-active mdl-navigation__link">Login</a>
+                    <a href="{{url('register')}}" class="is-active mdl-navigation__link">Register</a>
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('archive')}}">Archive</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{url('logout')}}">Logout</a>
-                    </li>
+                    <a href="{{url('archive')}}" class="is-active mdl-navigation__link">Archive</a>
+                    <a href="{{url('logout')}}" class="is-active mdl-navigation__link">Logout</a>
                 @endif
-            </ul>
+            </nav>
         </div>
-    </nav>
-    <!-- Header END -->
-
-    <!-- Content START -->
-    <main id="content">
-            @include('errors._list')
+        <main class="mdl-layout__content">
             @yield('content')
-    </main>
-    <!-- Content END -->
-    <!-- Footer START -->
-    <footer id="footer" class="bg-primary">
-        <div class="container">
-            <div class="col-sm-4">
-                <h3>About</h3>
+        </main>
 
-                    <p>This is a site for managing your marks blablablub</p>
+
+        <footer class="mdl-mini-footer">
+            <div class="mdl-mini-footer__left-section">
+                <div class="mdl-logo">&copy;2016 Severin Kaderli</div>
+                <ul class="mdl-mini-footer__link-list">
+                    <li><a href="https://github.com/severinkaderli">GitHub</a></li>
+                </ul>
             </div>
-            <div class="col-sm-4">
-                <h3>Links</h3>
-                    <ul>
-                        <li><a href="https://github.com/severinkaderli/gradus">GitHub</a></li>
-                        <li><a href="https://github.com/severinkaderli/simplex.css">simplex.css</a></li>
-                        <li><a href="http://severinkaderli.ch">severinkaderli.ch</a></li>
-                    </ul>
-            </div>
-            <div class="col-sm-4">
-                &copy; 2015 - Severin Kaderli
-            </div>
-        </div>
-    </footer>
-    <!-- Footer END -->
-</div>
-<!-- Body JS -->
-<script>
-    $.material.init();
-</script>
-@yield('bodyJS')
-</body>
+        </footer>
+    </div>
+    </body>
 </html>
