@@ -20,7 +20,7 @@ build/
 *.msm
 *.msp
 
-# Archives 
+# Archives
 *.7z
 *.dmg
 *.gz
@@ -32,7 +32,6 @@ build/
 
 # Composer
 vendor/
-composer.lock
 composer.phar
 
 # Gulp

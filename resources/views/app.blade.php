@@ -16,10 +16,10 @@
     <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,700italic,400italic' rel='stylesheet'
           type='text/css'>
     <!-- CSS Files -->
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/bootstrap/dist/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('bower_components/bootstrap/dist/css/bootstrap.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{URL::asset('assets/css/gradus.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/bootstrap-material-design/dist/css/bootstrap-material-design.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{URL::asset('vendor/bootstrap-material-design/dist/css/ripples.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::asset('bower_components/bootstrap-material-design/dist/css/ripples.min.css')}}">
     <style>
     .container {
         max-width: 1020px;
@@ -28,12 +28,12 @@
 
     @yield('extraCSS')
     <!-- JS Files -->
-    <script src="{{URL::asset('vendor/jquery/dist/jquery.min.js')}}"></script>
-    <script src="{{URL::asset('vendor\tether\dist\js\tether.min.js')}}"></script>
-    <script src="{{URL::asset('vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components\tether\dist\js\tether.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <script src="//cdn.jsdelivr.net/jquery.validation/1.14.0/jquery.validate.min.js"></script>
-    <scritp src="{{URL::asset('vendor/bootstrap-material-design/dist/js/material.min.js')}}"></script>
-    <scritp src="{{URL::asset('vendor/bootstrap-material-design/dist/js/ripples.min.js')}}"></script>
+    <scritp src="{{URL::asset('bower_components/bootstrap-material-design/dist/js/material.min.js')}}"></script>
+    <scritp src="{{URL::asset('bower_components/bootstrap-material-design/dist/js/ripples.min.js')}}"></script>
     @yield('extraJS')
 </head>
 <body>
