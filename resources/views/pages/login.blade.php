@@ -6,39 +6,7 @@
 
 @section('content')
 <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--6-col">
-        <div class="mdl-card mdl-shadow--2dp">
-            <div class="mdl-card__title">
-                <h2 class="mdl-card__title-text">Login</h2>
-            </div>
-            <div class="mdl-card__supporting-text">
-                {!! Form::open(['url' => 'login'])!!}
-
-                <fieldset class="form-group">
-                {!! Form::label('email', 'E-Mail') !!}
-                {!! Form::email('email', null, ['id' => 'email', 'class' => 'form-control']) !!}
-                </fieldset>
-
-                <fieldset class="form-group">
-                {!! Form::label('password', 'Passwort') !!}
-                {!! Form::password('password', ['id' => 'password', 'class' => 'form-control']) !!}
-                </fieldset>
-
-                <fieldset class="form-group">
-                {!! Form::checkbox('remember', '', false, ['id' => 'remember']) !!}
-                {!! Form::label('remember', 'Remember password') !!}
-                </fieldset>
-
-                <fieldset class="form-group">
-                {!! Form::submit('Login', ['id' => 'login', 'name' => 'login', 'class' => 'btn btn-primary']) !!}
-                or <a href="{{url('/register')}}">create an account</a>
-                </fieldset>
-
-                {!! Form::close() !!}
-            </div>
-        </div>
-    </div>
-    <div class="mdl-cell mdl-cell--6-col">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--1-offset-tablet">
         <div class="mdl-card mdl-shadow--2dp">
             <div class="mdl-card__title">
                 <h2 class="mdl-card__title-text">Open-source grade manager</h2>
@@ -54,8 +22,42 @@
             </div>
         </div>
     </div>
+
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--1-offset-tablet">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Login</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                {!! Form::open(['url' => 'login'])!!}
+
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {!! Form::email('email', null, ['id' => 'email', 'class' => 'mdl-textfield__input']) !!}
+                    {!! Form::label('email', 'E-Mail', ['class' => 'mdl-textfield__label']) !!}
+                </div>
+
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    {!! Form::password('password', ['id' => 'password', 'class' => 'mdl-textfield__input']) !!}
+                    {!! Form::label('password', 'Passwort', ['class' => 'mdl-textfield__label']) !!}
+                </div>
+
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember">
+
+                    {!! Form::checkbox('remember', '', false, ['id' => 'remember', 'class' => 'mdl-checkbox__input']) !!}
+
+                    <span class="mdl-checkbox__label">Remember password</span>
+                </label>
+
+                <div class="submit-button">
+                    {!! Form::submit('Login', ['id' => 'login', 'name' => 'login', 'class' => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored']) !!}
+                    or <a href="{{url('/register')}}">create an account</a>
+                </div>
+
+                {!! Form::close() !!}
+            </div>
+        </div>
+    </div>
 </div>
-
-
 
 @stop

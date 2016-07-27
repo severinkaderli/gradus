@@ -5,116 +5,46 @@
 @stop
 
 @section('content')
-    <div class="container">
-        <h1>Register</h1>
-        {!! Form::open(['url' => 'register', 'id'=>'registerForm'])!!}
+<div class="mdl-grid">
+    <div class="mdl-cell mdl-cell--6-col mdl-cell--3-offset-desktop mdl-cell--1-offset-tablet">
+        <div class="mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+                <h2 class="mdl-card__title-text">Register</h2>
+            </div>
+            <div class="mdl-card__supporting-text">
+                {!! Form::open(['url' => 'register', 'id'=>'registerForm'])!!}
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {!! Form::text('firstname', null, ['id' => 'firstname', 'class' => 'mdl-textfield__input']) !!}
+                        {!! Form::label('firstname', 'Vorname', ['class' => 'mdl-textfield__label']) !!}
+                    </div>
 
-            <fieldset class="form-group">
-                <div class="col-md-3 text-md-right">
-                    {!! Form::label('firstname', 'Vorname', ['class' => 'form-control-label']) !!}
-                </div>
-                <div class="col-md-4">
-                    {!! Form::text('firstname', null, ['id' => 'firstname', 'class' => 'form-control']) !!}
-                </div>
-                <div class="col-md-5 text-danger form-control-label"></div>
-            </fieldset>
-            <fieldset class="form-group">
-                <div class="col-md-3 text-md-right">
-                    {!! Form::label('lastname', 'Name', ['class' => 'form-control-label']) !!}
-                </div>
-                <div class="col-md-4">
-                    {!! Form::text('lastname', null, ['id' => 'lastname', 'class' => 'form-control']) !!}
-                </div>
-                <div class="col-md-5 text-danger form-control-label"></div> 
-            </fieldset>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {!! Form::text('lastname', null, ['id' => 'lastname', 'class' => 'mdl-textfield__input']) !!}
+                        {!! Form::label('lastname', 'Nachname', ['class' => 'mdl-textfield__label']) !!}
+                    </div>
 
-            <fieldset class="form-group">
-                <div class="col-md-3 text-md-right">
-                    {!! Form::label('email', 'E-Mail', ['class' => 'form-control-label']) !!}
-                </div>
-                <div class="col-md-4">
-                    {!! Form::email('email', null, ['id' => 'email', 'class' => 'form-control']) !!}
-                </div>
-                <div class="col-md-5 text-danger form-control-label"></div> 
-            </fieldset>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {!! Form::email('email', null, ['id' => 'email', 'class' => 'mdl-textfield__input']) !!}
+                        {!! Form::label('email', 'E-Mail', ['class' => 'mdl-textfield__label']) !!}
+                    </div>
 
-            <fieldset class="form-group">
-                <div class="col-md-3 text-md-right">
-                     {!! Form::label('password', 'Passwort', ['class' => 'form-control-label']) !!}
-                </div>
-                <div class="col-md-4">
-                     {!! Form::password('password', ['id' => 'password', 'class' => 'form-control']) !!}
-                </div>
-                <div class="col-md-5 form-control-label"></div>
-            </fieldset>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {!! Form::password('password', ['id' => 'password', 'class' => 'mdl-textfield__input']) !!}
+                        {!! Form::label('password', 'Passwort', ['class' => 'mdl-textfield__label']) !!}
+                    </div>
 
-            <fieldset class="form-group">
-                <div class="col-md-3 text-md-right">
-                     {!! Form::label('password_confirmation', 'Passwort best&auml;tigen', ['class' => 'form-control-label']) !!}
-                </div>
-                <div class="col-md-4">
-                     {!! Form::password('password_confirmation', ['id' => 'password_confirmation', 'class' => 'form-control']) !!}
-                </div>
-                <div class="col-md-5 text-danger form-control-label"></div>
-            </fieldset>
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        {!! Form::password('password_confirmation', ['id' => 'password_confirmation', 'class' => 'mdl-textfield__input']) !!}
+                        {!! Form::label('password_confirmation', 'Passwort bestätigen', ['class' => 'mdl-textfield__label']) !!}
+                    </div>
 
-            <fieldset class="form-group">
-                <div class="col-md-offset-3 col-md-4">
-                    {!! Form::submit('Register', ['id' => 'register', 'name' => 'register', 'class' => 'btn btn-primary']) !!}
-                </div>
-            </fieldset>
-
-        {!! Form::close() !!}
+                    <div class="submit-button">
+                        {!! Form::submit('Login', ['id' => 'login', 'name' => 'register', 'class' => 'mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--raised mdl-button--colored']) !!}
+                    </div>
+                {!! Form::close() !!}
+            </div>
+        </div>
     </div>
-@stop
-@section('bodyJS')
-  <script>
+</div>
 
-  var registerForm = $("#registerForm").validate({
-    rules: {
-        firstname: {
-            required: true
-        },
-        lastname: {
-            required: true
-        },
-        email: {
-            email: true,
-            required: true
-        },
-        password: {
-            required: true
-        }
-
-    },
-    messages: {
-        firstname: {
-            required: "Der Name wird benötigt."
-        }
-    },
-    errorPlacement: function(error, element) {
-        error.appendTo(element.parent("div").next("div"));
-    },
-    highlight: function(element) {
-        $(element).addClass("form-control-danger");
-        $(element).parents('fieldset').addClass('has-danger');
-    },
-    unhighlight: function(element) {
-        $(element).removeClass("form-control-danger");
-        $(element).parents('fieldset').removeClass('has-danger');
-    },
-    success: function(label, element) {
-        $(element).addClass("form-control-success");
-        $(element).parents('fieldset').addClass('has-success');
-    }
-  });
-
-  if( $('meta[name=_error]').attr('content') == 1) {
-    registerForm.form();
-  }
-  
-  
-  </script>
-
-  
 @stop

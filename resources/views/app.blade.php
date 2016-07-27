@@ -24,11 +24,16 @@
             width: 100%;
             max-width: 100%;
             height: 100%;
+            margin: 0 auto 10px auto;
         }
 
         .mdl-layout__content {
             max-width: 1024px;
             margin: 0 auto;
+        }
+
+        .submit-button {
+            margin-top: 20px;
         }
     </style>
     <!-- JS Files -->
