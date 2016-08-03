@@ -27,8 +27,8 @@ Route::get('/', 'PageController@home');
 
 //Groups
 Route::resource('groups', "GroupController");
-Route::put('groups/{groups}/archive', "GroupController@archive");
-Route::put('groups/{groups}/unarchive', "GroupController@unarchive");
+Route::patch('groups/{groups}/archive', "GroupController@archive");
+Route::patch('groups/{groups}/unarchive', "GroupController@unarchive");
 Route::get('archive', "GroupController@archiveIndex");
 
 //Subjects

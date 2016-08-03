@@ -13,16 +13,8 @@
             </div>
             <div class="mdl-card__supporting-text">
                 {!! Form::open(['url' => 'register', 'id'=>'registerForm'])!!}
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        {!! Form::text('firstname', null, ['id' => 'firstname', 'class' => 'mdl-textfield__input']) !!}
-                        {!! Form::label('firstname', 'Vorname', ['class' => 'mdl-textfield__label']) !!}
-                    </div>
 
-                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                        {!! Form::text('lastname', null, ['id' => 'lastname', 'class' => 'mdl-textfield__input']) !!}
-                        {!! Form::label('lastname', 'Nachname', ['class' => 'mdl-textfield__label']) !!}
-                    </div>
-
+                @include('errors._list')
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         {!! Form::email('email', null, ['id' => 'email', 'class' => 'mdl-textfield__input']) !!}
                         {!! Form::label('email', 'E-Mail', ['class' => 'mdl-textfield__label']) !!}

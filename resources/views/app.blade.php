@@ -27,17 +27,14 @@
             margin: 0 auto 10px auto;
         }
 
-        .mdl-layout__content {
-            max-width: 1024px;
-            margin: 0 auto;
-        }
-
         .submit-button {
             margin-top: 20px;
         }
     </style>
     <!-- JS Files -->
     <script async src="{{URL::asset('bower_components/material-design-lite/material.min.js')}}"></script>
+    <script src="{{URL::asset('bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <script src="{{URL::asset('js/rest_link.js')}}"></script>
     @yield('extraJS')
 </head>
 <body>
